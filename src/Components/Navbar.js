@@ -22,15 +22,19 @@ const useStyles = makeStyles({
     },
     logo: {
         flexGrow: 1,
-        marginLeft: 70
+        marginLeft: 70,
+        fontFamily: theme.typography.fontFamily,
+        color: theme.palette.primary.main
         
     },
     link: {
         textDecoration: "none"
     },
     button: {
-        color: theme.palette.primary.main
+        color: theme.palette.primary.main,
+        fontFamily: theme.typography.fontFamily
     }
+    
 })
 
 export default function Navbar() {
@@ -66,7 +70,10 @@ export default function Navbar() {
                         </Button>
                         </Link>
                         <Link to="book-a-link" className={classes.link}>
-                            <Button variant="contained" color={classes.button} size="large">
+                            <Button 
+                            variant="contained" 
+                            style={{fontFamily: theme.typography.fontFamily}} 
+                            size="large">
                                 Book a Class
                             </Button>
                         </Link>
