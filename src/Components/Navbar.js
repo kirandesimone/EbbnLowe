@@ -69,7 +69,7 @@ export default function Navbar() {
                             Blog
                         </Button>
                         </Link>
-                        <Link to="book-a-link" className={classes.link}>
+                        <Link to="book-a-class" className={classes.link}>
                             <Button 
                             variant="contained" 
                             style={{fontFamily: theme.typography.fontFamily}} 
@@ -80,7 +80,6 @@ export default function Navbar() {
                     </div>
                </Toolbar>
            </AppBar>
-
         </div>
     )
 }

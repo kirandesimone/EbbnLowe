@@ -14,7 +14,8 @@ const useStyles = makeStyles({
         backgroundColor: theme.palette.secondary.main
     },
     header: {
-        fontFamily: theme.typography.fontFamily
+        fontFamily: theme.typography.fontFamily,
+        color: theme.palette.primary.main,
     }
 })
 
@@ -31,7 +32,7 @@ export default function Home() {
             </Typography>
         </section>
         <section className={classes.newsletter}>
-        <Typography variant="h2" className={classes.header}>
+            <Typography variant="h2" className={classes.header}>
                 Newsletter
             </Typography>
         </section>
