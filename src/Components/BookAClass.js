@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 import StripeCheckout from 'react-stripe-checkout'
 import { makeStyles } from '@material-ui/core/styles'
@@ -8,17 +7,31 @@ import theme from '../theme'
 
 const useStyles = makeStyles({
     root: {
-        marginTop: 150
+        display: "flex",
+        flexDirection: "column"
+    },
+    container: {
+        display: "flex",
+        justifyContent: "space-between",
+        marginTop: 150,
+        marginRight: "auto",
+        marginLeft: "auto",
+        maxWidth: 1400
+        
     },
     banner: {
         backgroundColor: theme.palette.primary.dark,
     },
     title: {
-        paddingTop: 160,
-        paddingBottom: 40,
-        paddingLeft: 100,
-        color: theme.palette.primary.main
-    }
+        paddingTop: 250,
+        paddingBottom: 100,
+        paddingLeft: 200,
+        color: theme.palette.primary.main,
+        fontFamily: theme.typography.fontFamily
+    },
+    content: {
+        display: "flex",
+    },
 })
 
 export default function BookAClass() {
@@ -53,13 +66,13 @@ export default function BookAClass() {
     };
 
     return (
-        <div>
+        <div className={classes.root}>
             <div className={classes.banner}>
                 <Typography variant="h2" className={classes.title}>
                     Book a Class
                 </Typography>
             </div>
-            <Container maxWidth="md" className={classes.root}>
+            <div className={classes.container}>
                 <StripeCheckout 
                     stripeKey="pk_test_51HSpvqA4tqhUmZLBCNsvZUNp2fJsjx3qrx1jkhUJlWa3Zy6EpB8oznvNpQbhHwJFRkyiPGa2ZxEPfDTsWILwnTrV00pRclb6tA"
                     token={makePayment}
@@ -72,7 +85,7 @@ export default function BookAClass() {
                         Checkout
                     </Button>
                 </StripeCheckout>
-            </Container>
+            </div>
         </div>
     )
 }

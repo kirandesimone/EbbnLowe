@@ -3,7 +3,7 @@ import { useSpring, animated } from 'react-spring'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
-import instructor2 from '../Assets/rsz_image.jpg'
+import instructorPic from '../Assets/rsz_instructor.jpg'
 import theme from '../theme'
 
 
@@ -64,7 +64,7 @@ export default function Instructors() {
             <div className={classes.container}>
                 <div className={classes.content}>
                     <animated.div style={fade}>
-                        <img src={instructor2} alt="Kari the instructor"/>
+                        <img src={instructorPic} alt="Kari the instructor"/>
                     </animated.div>
                     <div className={classes.description}>
                         <div className={classes.name}>

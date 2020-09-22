@@ -44,13 +44,8 @@ export default function Blog() {
             <div>
                 <div className={classes.container}>
                     <div className={classes.content}>
-                        <Typography>
-                            Picture
-                        </Typography>
-                    </div>
-                    <div>
-                        <Typography>
-                            Words
+                        <Typography variant="h1" style={{fontFamily: theme.typography.fontFamily}}>
+                            COMING SOON
                         </Typography>
                     </div>
                 </div>
