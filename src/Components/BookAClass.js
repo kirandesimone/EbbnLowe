@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
+import StripeCheckout from 'react-stripe-checkout'
 import { makeStyles } from '@material-ui/core/styles'
+import Button from '@material-ui/core/Button'
 import theme from '../theme'
 
 const useStyles = makeStyles({
@@ -21,6 +23,35 @@ const useStyles = makeStyles({
 
 export default function BookAClass() {
     const classes = useStyles();
+
+    const [product, setProduct] = useState({
+        name: "React",
+        price: 10,
+        productBy: "FaceBook"
+    });
+
+    const makePayment = token => {
+        const body = {
+            product,
+            token
+        }
+        const headers = {
+            "Content-Type": "application/json"
+        }
+
+        return fetch(`http://localhost:3001/payment`, {
+            method: "POST",
+            headers: headers,
+            body: JSON.stringify(body)
+        }).then(res => {
+            console.log(res);
+            const {status} = res;
+            console.log(status);
+        }).catch(err => {
+            console.log(err);
+        })
+    };
+
     return (
         <div>
             <div className={classes.banner}>
@@ -29,7 +60,18 @@ export default function BookAClass() {
                 </Typography>
             </div>
             <Container maxWidth="md" className={classes.root}>
-                
+                <StripeCheckout 
+                    stripeKey="pk_test_51HSpvqA4tqhUmZLBCNsvZUNp2fJsjx3qrx1jkhUJlWa3Zy6EpB8oznvNpQbhHwJFRkyiPGa2ZxEPfDTsWILwnTrV00pRclb6tA"
+                    token={makePayment}
+                    name="Checkout"
+                    amount={product.price * 100}
+                    //shippingAddress
+                    //billingAddress
+                >
+                    <Button>
+                        Checkout
+                    </Button>
+                </StripeCheckout>
             </Container>
         </div>
     )
