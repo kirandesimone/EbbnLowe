@@ -28,7 +28,7 @@ const useStyles = makeStyles({
         
     },
     link: {
-        textDecoration: "none"
+        textDecoration: "none",
     },
     button: {
         color: theme.palette.primary.main,

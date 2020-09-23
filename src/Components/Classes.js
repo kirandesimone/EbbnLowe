@@ -25,14 +25,14 @@ const useStyles = makeStyles({
     },
     title: {
         paddingTop: 250,
-        paddingBottom: 100,
+        paddingBottom: 100, 
         paddingLeft: 200,
         color: theme.palette.primary.main,
         fontFamily: theme.typography.fontFamily
     },
     content: {
         display: "flex",
-        paddingBottom: 120
+        paddingBottom: "15%"
     },
     description: {
         marginTop: 100,
@@ -60,7 +60,7 @@ export default function Classes() {
         <div className={classes.root}>
             <div className={classes.banner}>
                 <Typography variant="h2" className={classes.title}>
-                    Classes
+                    Our Flows
                 </Typography>
             </div>
             <div>
@@ -72,7 +72,7 @@ export default function Classes() {
                         <div className={classes.description}>
                             <div className={classes.name}>
                                 <Typography variant="h2" style={{color: theme.palette.primary.light, fontFamily: theme.typography.fontFamily}}>
-                                    Example Class
+                                    Vinyas Flow
                                 </Typography>
                             </div>
                             <Typography style={{fontFamily: theme.typography.fontFamily}}>
@@ -87,7 +87,7 @@ export default function Classes() {
                         <div className={classes.flippedDescription}>
                             <div className={classes.name}>
                                 <Typography variant="h2" style={{color: theme.palette.primary.light, fontFamily: theme.typography.fontFamily}}>
-                                    Example Class
+                                    Don't Plan(k) On It Flow
                                 </Typography>
                             </div>
                             <Typography style={{fontFamily: theme.typography.fontFamily}}>
@@ -108,7 +108,7 @@ export default function Classes() {
                         <div className={classes.description}>
                             <div className={classes.name}>
                                 <Typography variant="h2" style={{color: theme.palette.primary.light, fontFamily: theme.typography.fontFamily}}>
-                                    Example Class
+                                    Quick Flow
                                 </Typography>
                             </div>
                             <Typography style={{fontFamily: theme.typography.fontFamily}}>
@@ -118,6 +118,24 @@ export default function Classes() {
                                 consequat quis mauris. Etiam elit mi, placerat id sodales ut, lacinia eget diam. Ut faucibus ut tellus consequat blandit.
                             </Typography>
                         </div>
+                    </div>
+                    <div className={classes.content}>
+                        <div className={classes.flippedDescription}>
+                            <div className={classes.name}>
+                                <Typography variant="h2" style={{color: theme.palette.primary.light, fontFamily: theme.typography.fontFamily}}>
+                                    Soothing Souls Flow
+                                </Typography>
+                            </div>
+                            <Typography style={{fontFamily: theme.typography.fontFamily}}>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis cursus tellus. Pellentesque semper ex a dictum molestie. 
+                                Integer at tortor viverra, rutrum nulla nec, dictum ipsum. Donec dapibus ultrices metus, sed scelerisque purus feugiat non. 
+                                Sed a turpis ut odio dignissim sodales. Nullam at lobortis augue, ut viverra est. Integer risus lorem, feugiat quis ultrices in, 
+                                consequat quis mauris. Etiam elit mi, placerat id sodales ut, lacinia eget diam. Ut faucibus ut tellus consequat blandit.
+                            </Typography>
+                        </div>
+
+                        <img src={classes2} alt="Class 2"/>
+
                     </div>
                 </div>
             </div>

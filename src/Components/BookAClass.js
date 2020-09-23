@@ -1,8 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Typography from '@material-ui/core/Typography'
-import StripeCheckout from 'react-stripe-checkout'
 import { makeStyles } from '@material-ui/core/styles'
-import Button from '@material-ui/core/Button'
 import theme from '../theme'
 
 const useStyles = makeStyles({
@@ -14,9 +12,8 @@ const useStyles = makeStyles({
         display: "flex",
         justifyContent: "space-between",
         marginTop: 150,
-        marginRight: "auto",
-        marginLeft: "auto",
-        maxWidth: 1400
+        paddingRight: "20%",
+        paddingLeft: "20%",
         
     },
     banner: {
@@ -36,35 +33,6 @@ const useStyles = makeStyles({
 
 export default function BookAClass() {
     const classes = useStyles();
-
-    const [product, setProduct] = useState({
-        name: "React",
-        price: 10,
-        productBy: "FaceBook"
-    });
-
-    const makePayment = token => {
-        const body = {
-            product,
-            token
-        }
-        const headers = {
-            "Content-Type": "application/json"
-        }
-
-        return fetch(`http://localhost:3001/payment`, {
-            method: "POST",
-            headers: headers,
-            body: JSON.stringify(body)
-        }).then(res => {
-            console.log(res);
-            const {status} = res;
-            console.log(status);
-        }).catch(err => {
-            console.log(err);
-        })
-    };
-
     return (
         <div className={classes.root}>
             <div className={classes.banner}>
@@ -73,19 +41,17 @@ export default function BookAClass() {
                 </Typography>
             </div>
             <div className={classes.container}>
-                <StripeCheckout 
-                    stripeKey="pk_test_51HSpvqA4tqhUmZLBCNsvZUNp2fJsjx3qrx1jkhUJlWa3Zy6EpB8oznvNpQbhHwJFRkyiPGa2ZxEPfDTsWILwnTrV00pRclb6tA"
-                    token={makePayment}
-                    name="Checkout"
-                    amount={product.price * 100}
-                    //shippingAddress
-                    //billingAddress
+                <iframe 
+                src="https://app.acuityscheduling.com/schedule.php?owner=20766070" 
+                title="Schedule Appointment" 
+                width="100%" 
+                height="800" 
+                frameBorder="0"
                 >
-                    <Button>
-                        Checkout
-                    </Button>
-                </StripeCheckout>
+                </iframe>
+                <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript"></script>
             </div>
         </div>
     )
 }
+
