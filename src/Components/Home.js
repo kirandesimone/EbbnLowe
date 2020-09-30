@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSpring, animated } from 'react-spring'
-import MailchimpSubscribe from 'react-mailchimp-subscribe'
 import Newsletter from '../Components/Newsletter'
 import LazyLoad from 'react-lazyload'
 import background from '../Assets/background.jpg'
@@ -64,7 +63,7 @@ const useStyles = makeStyles({
     },
     newsletterContent: {
         display: "flex",
-        flexDirection: "column"
+        flexDirection: "column",
     },
     about: {
         paddingTop: "5%",
@@ -156,16 +155,9 @@ export default function Home() {
                                 Stay updated by subscribing to our newsletter!
                             </Typography>
                         </div>
-                        <MailchimpSubscribe 
-                            url={process.env.REACT_APP_MAILCHIMP}
-                            render={({ subscribe, status, message }) => (
-                                <Newsletter 
-                                status={status}
-                                message={message}
-                                onValidated={formData => subscribe(formData)}
-                                />
-                            )}
-                        />
+                        <div style={{paddingLeft: '20%'}}>
+                            <Newsletter/>
+                        </div>
                     </div>
                 </div>
             </section>
