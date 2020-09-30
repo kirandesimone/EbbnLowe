@@ -63,7 +63,7 @@ const useStyles = makeStyles({
     },
     newsletterContent: {
         display: "flex",
-        flexDirection: "column",
+        flexDirection: 'column'
     },
     about: {
         paddingTop: "5%",
@@ -152,7 +152,7 @@ export default function Home() {
                     <div className={classes.newsletterContent}>
                         <div style={{paddingBottom: 20}}>
                             <Typography variant="h5" style={{color: theme.palette.primary.main}}>
-                                Stay updated by subscribing to our newsletter!
+                                Stay up to date by subscribing to our newsletter!
                             </Typography>
                         </div>
                         <div style={{paddingLeft: '20%'}}>
