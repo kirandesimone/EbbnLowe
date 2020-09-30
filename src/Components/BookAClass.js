@@ -23,7 +23,7 @@ const useStyles = makeStyles({
     title: {
         paddingTop: 250,
         paddingBottom: 100,
-        paddingLeft: 200,
+        paddingLeft: "12%",
         color: theme.palette.primary.main,
         fontFamily: theme.typography.fontFamily
     },

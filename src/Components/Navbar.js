@@ -22,7 +22,7 @@ const useStyles = makeStyles({
     },
     logo: {
         flexGrow: 1,
-        marginLeft: 70,
+        marginLeft: "20%",
         fontFamily: theme.typography.fontFamily,
         color: theme.palette.primary.main
         

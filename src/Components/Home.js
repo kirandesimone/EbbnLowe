@@ -6,9 +6,11 @@ import LazyLoad from 'react-lazyload'
 import background from '../Assets/background.jpg'
 import homePic1 from '../Assets/rsz_home1.jpg'
 import homePic2 from '../Assets/rsz_home2.jpg'
+import mobile1 from '../Assets/mobile_home1.jpg'
 import { makeStyles } from '@material-ui/core/styles'
 import theme from '../theme'
 import { Typography } from '@material-ui/core'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { Link } from 'react-router-dom'
 
 
@@ -26,7 +28,7 @@ const useStyles = makeStyles({
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-start",
-        maxWidth: 500,
+        maxWidth: "22%",
         paddingTop: "27%",
         paddingLeft: "15%",
     },
@@ -36,9 +38,9 @@ const useStyles = makeStyles({
         paddingBottom: "5%"
     },
     classes: {
-        paddingTop: 30,
-        paddingLeft: 200,
-        paddingBottom: 70,
+        paddingTop: "5%",
+        paddingLeft: "12%",
+        paddingBottom: "3%",
         backgroundColor: theme.palette.primary.light
     },
     classPictures: {
@@ -49,9 +51,9 @@ const useStyles = makeStyles({
         paddingTop: "5%"
     },
     newsletter: {
-        paddingTop: 30,
-        paddingLeft: 200,
-        paddingBottom: 150,
+        paddingTop: "5%",
+        paddingLeft: "12%",
+        paddingBottom: "3%",
         backgroundColor: theme.palette.secondary.main
     },
     newsletterWrapper: {
@@ -65,10 +67,9 @@ const useStyles = makeStyles({
         flexDirection: "column"
     },
     about: {
-        paddingTop: 30,
-        paddingLeft: 200,
-        paddingBottom: 70,
-
+        paddingTop: "5%",
+        paddingLeft: "12%",
+        paddingBottom: "3%",
     },
     aboutContent: {
         display: "flex",
@@ -87,7 +88,8 @@ export default function Home() {
     const fade = useSpring({
         opacity: 1,
         from: {opacity: 0},
-    })
+    });
+    const matches = useMediaQuery('(max-width:600px)');
     return (
        <div>
             <animated.div style={fade} className={classes.heroImage}>
@@ -109,7 +111,7 @@ export default function Home() {
                 <div className={classes.classPictures}>
                     <div>
                         <LazyLoad height={200} offset={100}>
-                            <img src={homePic1} alt="Teacher Kari doing a pose"/>
+                            <img src={matches ? mobile1 : homePic1} alt="Teacher Kari doing a pose"/>
                         </LazyLoad>
                     </div>
                     <div>
@@ -136,7 +138,7 @@ export default function Home() {
                     </div>
                     <div style={{paddingTop: 40}}>
                         <Typography variant="h4">
-                            <Link to="/classes" style={{textDecoration: "underline", color: theme.palette.primary.dark}}>
+                            <Link to="/about" style={{textDecoration: "underline", color: theme.palette.primary.dark}}>
                                 Learn More
                             </Link>
                         </Typography>
@@ -150,8 +152,8 @@ export default function Home() {
                 <div className={classes.newsletterWrapper}>
                     <div className={classes.newsletterContent}>
                         <div style={{paddingBottom: 20}}>
-                            <Typography variant="h5">
-                                Subscribe to our newsletter!
+                            <Typography variant="h5" style={{color: theme.palette.primary.main}}>
+                                Stay updated by subscribing to our newsletter!
                             </Typography>
                         </div>
                         <MailchimpSubscribe 

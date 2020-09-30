@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     container: {
         display: "flex",
         justifyContent: "space-between",
-        marginTop: 150,
+        marginTop: "10%",
         marginRight: "auto",
         marginLeft: "auto",
         maxWidth: 1400
@@ -27,7 +27,7 @@ const useStyles = makeStyles({
     title: {
         paddingTop: 250,
         paddingBottom: 100,
-        paddingLeft: 200,
+        paddingLeft: "12%",
         color: theme.palette.primary.main,
         fontFamily: theme.typography.fontFamily
     },
@@ -35,9 +35,14 @@ const useStyles = makeStyles({
         display: "flex",
         paddingBottom: "15%"
     },
+    heading: {
+        fontFamily: theme.typography.fontFamily,
+        color: theme.palette.primary.light, 
+        paddingBottom: 30
+    },
     description: {
-        marginTop: 100,
-        marginLeft : 100
+        marginTop: "9%",
+        marginLeft : "7%"
     },
 })
 
@@ -58,14 +63,14 @@ export default function About() {
                 <div className={classes.container}>
                     <div className={classes.content}>
                         <div>
-                            <LazyLoad height={200}>
-                                <animated.div style={fade} once>
+                            <LazyLoad height={200} once>
+                                <animated.div style={fade}>
                                     <img src={aboutPic} alt="Kari smiling"/>
                                 </animated.div>
                             </LazyLoad>
                         </div>
                         <div className={classes.description}>
-                            <Typography variant="h5" style={{fontFamily: theme.typography.fontFamily, paddingBottom: 30}}>
+                            <Typography variant="h5" className={classes.heading}>
                                 Lets get it OM! 
                             </Typography>
                             <Typography style={{paddingBottom: 20}}>

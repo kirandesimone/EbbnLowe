@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     container: {
         display: "flex",
         justifyContent: "space-between",
-        marginTop: 150,
+        marginTop: "10%",
         marginRight: "auto",
         marginLeft: "auto",
         maxWidth: 1400
@@ -27,7 +27,7 @@ const useStyles = makeStyles({
     title: {
         paddingTop: 250,
         paddingBottom: 100,
-        paddingLeft: 200,
+        paddingLeft: "12%",
         color: theme.palette.primary.main,
         fontFamily: theme.typography.fontFamily
     },
@@ -35,11 +35,11 @@ const useStyles = makeStyles({
         display: "flex",
     },
     description: {
-        marginTop: 180,
-        marginLeft : 100
+        marginTop: "9%",
+        marginLeft: "7%"
     },
     name: {
-        marginBottom: 40,
+        marginBottom: 30,
     },
     words: {
         fontFamily: theme.typography.fontFamily,
@@ -74,7 +74,7 @@ export default function Instructors() {
                                 Kari Lowe
                             </Typography>
                         </div>
-                        <Typography style={{fontFamily: theme.typography.fontFamily}}>
+                        <Typography>
                             For Kari, yoga means home. She first discovered the artform on visits back to Cleveland during college, she and her mom would take classes to connect with each other and unwind. Hobby turned to passion as Kari quickly recognized the 
                             interconnectivity between mind, body and soul and how yoga enhances these powerful relationships. Many free trials and yoga memberships later, 
                             Kari decided to get certified herself by completing her 200 hour training requirement in 2017. Soon after, she began teaching at various studios throughout DC and Philadelphia, 

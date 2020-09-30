@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     container: {
         display: "flex",
         flexDirection: "column",
-        marginTop: 150,
+        marginTop: "10%",
         marginRight: "auto",
         marginLeft: "auto",
         maxWidth: 1400
@@ -29,7 +29,7 @@ const useStyles = makeStyles({
     title: {
         paddingTop: 250,
         paddingBottom: 100, 
-        paddingLeft: 200,
+        paddingLeft: "12%",
         color: theme.palette.primary.main,
         fontFamily: theme.typography.fontFamily
     },
@@ -38,15 +38,15 @@ const useStyles = makeStyles({
         paddingBottom: "15%"
     },
     description: {
-        marginTop: 100,
-        marginLeft : 100
+        marginTop: "6%",
+        marginLeft: "7%"
     },
     flippedDescription: {
-        marginTop: 100,
-        marginRight: 100
+        marginTop: "6%",
+        marginRight: "7%"
     },
     name: {
-        marginBottom: 40,
+        marginBottom: 30,
     },
     words: {
         fontFamily: theme.typography.fontFamily,
@@ -84,7 +84,7 @@ export default function Classes() {
                                     Vinyas Flow
                                 </Typography>
                             </div>
-                            <Typography style={{fontFamily: theme.typography.fontFamily}}>
+                            <Typography>
                                 Start your practice with some tea or a cup of coffee and a YAS attitude. 
                                 This flow aims to challenge your core after a week/end of doing…. Anything (or nothing). A power flow that stretches, flexes, and increases strength throughout the mind and the body. 
                                 This class sets all levels of yogis up for success mixing in foundational postures as well as providing various options to go deeper. 
@@ -98,7 +98,7 @@ export default function Classes() {
                                     Don't Plan(k) On It Flow
                                 </Typography>
                             </div>
-                            <Typography style={{fontFamily: theme.typography.fontFamily}}>
+                            <Typography>
                                 Work your core and arm strength up in a full body strength and inversion based class. 
                                 If you are dying to get upside down, this class welcomes all levels of yogis looking to challenge themselves and work up to an inversion or practice the skills to get there. 
                                 (Video participation is STRONGLY recommended) 
@@ -122,7 +122,7 @@ export default function Classes() {
                                     Quick Flow
                                 </Typography>
                             </div>
-                            <Typography style={{fontFamily: theme.typography.fontFamily}}>
+                            <Typography>
                                 A 30 min class that can be taken during a morning or afternoon routine that allows for a quick reset for your mind and body.
                                 **COMING TO THE SCHEDULE SOON**
                             </Typography>
@@ -135,7 +135,7 @@ export default function Classes() {
                                     Soothing Souls Flow
                                 </Typography>
                             </div>
-                            <Typography style={{fontFamily: theme.typography.fontFamily}}>
+                            <Typography>
                                 Restore your body after the weekend with a minor piece of workout and flexibility. 
                                 Work on what your body is calling to you. **COMING TO THE SCHEDULE SOON**
                             </Typography>

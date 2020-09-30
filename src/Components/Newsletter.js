@@ -13,7 +13,12 @@ const useStyles = makeStyles({
         margin: theme.spacing(2),
         width: '25ch',
       }
+    },
+    form: {
+      display: "flex",
+      flexDirection: "column"
     }
+
 })
 
 export default function Newsletter(props) {
@@ -44,24 +49,24 @@ export default function Newsletter(props) {
             dangerouslySetInnerHTML={{ __html: props.message }}
           />
         )}
-        <form className={classes.input} noValidate autoComplete="off">
-          <TextField
-            variant="filled"
-            ref={node => (name = node)}
-            type="text"
-            placeholder="Your name"
-          />
-          <TextField
-            variant="filled"
-            ref={node => (email = node)}
-            type="email"
-            placeholder="Your email"
-          />
-        </form>
-        <div>
-          <Button variant="outlined" size="small" onClick={submit}>
-            Subscribe
-          </Button>
+        <div className={classes.form}>
+          <form className={classes.input} noValidate autoComplete="off">
+            <TextField
+              variant="filled"
+              ref={node => (name = node)}
+              type="text"
+              placeholder="Your name"
+            />
+            <TextField
+              variant="filled"
+              ref={node => (email = node)}
+              type="email"
+              placeholder="Your email"
+            />
+          </form>
+            <Button variant="contained" size="medium" onClick={submit}>
+              Subscribe
+            </Button>
         </div>
       </div>
     )
