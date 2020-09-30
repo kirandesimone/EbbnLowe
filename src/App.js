@@ -7,6 +7,7 @@ import Instructors from './Components/Instructors'
 import Classes from './Components/Classes'
 import Blog from './Components/Blog'
 import BookAClass from './Components/BookAClass'
+import Footer from './Components/Footer'
 import './App.css'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/blog" component={Blog}/>
           <Route exact path="/book-a-class" component={BookAClass}/>
         </Switch>
+        <Footer/>
       </Router>
     </div>
   );

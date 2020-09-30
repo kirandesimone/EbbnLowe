@@ -14,6 +14,7 @@ const useStyles = makeStyles({
         marginTop: 150,
         paddingRight: "20%",
         paddingLeft: "20%",
+        paddingBottom: "20%"
         
     },
     banner: {
@@ -50,6 +51,7 @@ export default function BookAClass() {
                 >
                 </iframe>
                 <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript"></script>
+                
             </div>
         </div>
     )

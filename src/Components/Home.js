@@ -1,5 +1,8 @@
 import React from 'react'
 import { useSpring, animated } from 'react-spring'
+import MailchimpSubscribe from 'react-mailchimp-subscribe'
+import Newsletter from '../Components/Newsletter'
+import LazyLoad from 'react-lazyload'
 import background from '../Assets/background.jpg'
 import homePic1 from '../Assets/rsz_home1.jpg'
 import homePic2 from '../Assets/rsz_home2.jpg'
@@ -13,10 +16,11 @@ import { Link } from 'react-router-dom'
 const useStyles = makeStyles({
     heroImage: {
         height: "100vh",
-        backgroundImage: `url(${background})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${background})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "top-center",
+        position: "relative"
     },
     heroText: {
         display: "flex",
@@ -47,14 +51,30 @@ const useStyles = makeStyles({
     newsletter: {
         paddingTop: 30,
         paddingLeft: 200,
-        paddingBottom: 250,
-        backgroundColor: theme.palette.primary.dark
+        paddingBottom: 150,
+        backgroundColor: theme.palette.secondary.main
     },
-    newsletterContent: {
+    newsletterWrapper: {
         display: "flex",
         justifyContent: "center",
         maxWidth: 1440,
         paddingTop: "5%"
+    },
+    newsletterContent: {
+        display: "flex",
+        flexDirection: "column"
+    },
+    about: {
+        paddingTop: 30,
+        paddingLeft: 200,
+        paddingBottom: 70,
+
+    },
+    aboutContent: {
+        display: "flex",
+        flexWrap: "wrap",
+        maxWidth: 1440,
+        paddingTop: "3%"
     },
     sectionHeader: {
         fontFamily: theme.typography.fontFamily,
@@ -88,10 +108,14 @@ export default function Home() {
                 </Typography>
                 <div className={classes.classPictures}>
                     <div>
-                        <img src={homePic1} alt="Teacher Kari doing a pose"/>
+                        <LazyLoad height={200} offset={100}>
+                            <img src={homePic1} alt="Teacher Kari doing a pose"/>
+                        </LazyLoad>
                     </div>
                     <div>
-                        <img src={homePic2} alt="Teacher Kari doing a pose"/>
+                        <LazyLoad height={200} offset={100}>
+                            <img src={homePic2} alt="Teacher Kari doing a pose"/>
+                        </LazyLoad>
                     </div>
                 </div>
                 <div style={{paddingTop: 40}}>
@@ -102,14 +126,45 @@ export default function Home() {
                     </Typography>
                 </div>
             </section>
+            <section>
+                <div className={classes.about}>
+                    <div className={classes.aboutContent}>
+                        <Typography variant="h3" style={{fontFamily: theme.typography.fontFamily, color: theme.palette.primary.dark}}>
+                            Virtual yoga takes place in the surroundings you choose. With life swirling around, at a seemingly dizzying pace, 
+                            it can be challenging to find a peaceful escape to focus on and prioritize yourself.
+                        </Typography>
+                    </div>
+                    <div style={{paddingTop: 40}}>
+                        <Typography variant="h4">
+                            <Link to="/classes" style={{textDecoration: "underline", color: theme.palette.primary.dark}}>
+                                Learn More
+                            </Link>
+                        </Typography>
+                    </div>
+                </div>
+            </section>
             <section className={classes.newsletter}>
                 <Typography variant="h3" className={classes.sectionHeader}>
                     Newsletter
                 </Typography>
-                <div className={classes.newsletterContent}>
-                    <Typography style={{color: theme.palette.primary.main, fontFamily: theme.typography.fontFamily}}>
-                        COMING SOON
-                    </Typography>
+                <div className={classes.newsletterWrapper}>
+                    <div className={classes.newsletterContent}>
+                        <div style={{paddingBottom: 20}}>
+                            <Typography variant="h5">
+                                Subscribe to our newsletter!
+                            </Typography>
+                        </div>
+                        <MailchimpSubscribe 
+                            url={process.env.REACT_APP_MAILCHIMP}
+                            render={({ subscribe, status, message }) => (
+                                <Newsletter 
+                                status={status}
+                                message={message}
+                                onValidated={formData => subscribe(formData)}
+                                />
+                            )}
+                        />
+                    </div>
                 </div>
             </section>
        </div>

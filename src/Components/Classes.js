@@ -4,7 +4,10 @@ import { makeStyles } from '@material-ui/core/styles'
 import classes1 from '../Assets/rsz_classes1.jpg'
 import classes2 from '../Assets/rsz_classes2.jpg'
 import classes3 from '../Assets/rsz_classes3.jpg'
+import classes4 from '../Assets/rsz_classes4.jpg'
 import theme from '../theme'
+import LazyLoad from 'react-lazyload'
+import { useSpring, animated } from 'react-spring'
 
 const useStyles = makeStyles({
     root: {
@@ -55,6 +58,10 @@ const useStyles = makeStyles({
 
 export default function Classes() {
     const classes = useStyles();
+    const fade = useSpring({
+        opacity: 1,
+        from: {opacity: 0},
+    });
 
     return (
         <div className={classes.root}>
@@ -66,9 +73,11 @@ export default function Classes() {
             <div>
                 <div className={classes.container}>
                     <div className={classes.content}>
-                    
-                        <img src={classes1} alt="Class 1"/>
-                        
+                        <LazyLoad height={200} once>
+                            <animated.div style={fade}>
+                                <img src={classes1} alt="Class 1"/>
+                            </animated.div>
+                        </LazyLoad>
                         <div className={classes.description}>
                             <div className={classes.name}>
                                 <Typography variant="h2" style={{color: theme.palette.primary.light, fontFamily: theme.typography.fontFamily}}>
@@ -76,10 +85,9 @@ export default function Classes() {
                                 </Typography>
                             </div>
                             <Typography style={{fontFamily: theme.typography.fontFamily}}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis cursus tellus. Pellentesque semper ex a dictum molestie. 
-                                Integer at tortor viverra, rutrum nulla nec, dictum ipsum. Donec dapibus ultrices metus, sed scelerisque purus feugiat non. 
-                                Sed a turpis ut odio dignissim sodales. Nullam at lobortis augue, ut viverra est. Integer risus lorem, feugiat quis ultrices in, 
-                                consequat quis mauris. Etiam elit mi, placerat id sodales ut, lacinia eget diam. Ut faucibus ut tellus consequat blandit.
+                                Start your practice with some tea or a cup of coffee and a YAS attitude. 
+                                This flow aims to challenge your core after a week/end of doing…. Anything (or nothing). A power flow that stretches, flexes, and increases strength throughout the mind and the body. 
+                                This class sets all levels of yogis up for success mixing in foundational postures as well as providing various options to go deeper. 
                             </Typography>
                         </div>
                     </div>
@@ -91,20 +99,23 @@ export default function Classes() {
                                 </Typography>
                             </div>
                             <Typography style={{fontFamily: theme.typography.fontFamily}}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis cursus tellus. Pellentesque semper ex a dictum molestie. 
-                                Integer at tortor viverra, rutrum nulla nec, dictum ipsum. Donec dapibus ultrices metus, sed scelerisque purus feugiat non. 
-                                Sed a turpis ut odio dignissim sodales. Nullam at lobortis augue, ut viverra est. Integer risus lorem, feugiat quis ultrices in, 
-                                consequat quis mauris. Etiam elit mi, placerat id sodales ut, lacinia eget diam. Ut faucibus ut tellus consequat blandit.
+                                Work your core and arm strength up in a full body strength and inversion based class. 
+                                If you are dying to get upside down, this class welcomes all levels of yogis looking to challenge themselves and work up to an inversion or practice the skills to get there. 
+                                (Video participation is STRONGLY recommended) 
                             </Typography>
                         </div>
-
-                        <img src={classes2} alt="Class 2"/>
-
+                        <LazyLoad height={200} once>
+                            <animated.div style={fade}>
+                                <img src={classes2} alt="Class 2"/>
+                            </animated.div>
+                        </LazyLoad>
                     </div>
                     <div className={classes.content}>
-                    
-                        <img src={classes3} alt="Class 3"/>
-                        
+                        <LazyLoad height={200} once>
+                            <animated.div style={fade}>
+                                <img src={classes3} alt="Class 3"/>
+                            </animated.div>
+                        </LazyLoad>
                         <div className={classes.description}>
                             <div className={classes.name}>
                                 <Typography variant="h2" style={{color: theme.palette.primary.light, fontFamily: theme.typography.fontFamily}}>
@@ -112,10 +123,8 @@ export default function Classes() {
                                 </Typography>
                             </div>
                             <Typography style={{fontFamily: theme.typography.fontFamily}}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis cursus tellus. Pellentesque semper ex a dictum molestie. 
-                                Integer at tortor viverra, rutrum nulla nec, dictum ipsum. Donec dapibus ultrices metus, sed scelerisque purus feugiat non. 
-                                Sed a turpis ut odio dignissim sodales. Nullam at lobortis augue, ut viverra est. Integer risus lorem, feugiat quis ultrices in, 
-                                consequat quis mauris. Etiam elit mi, placerat id sodales ut, lacinia eget diam. Ut faucibus ut tellus consequat blandit.
+                                A 30 min class that can be taken during a morning or afternoon routine that allows for a quick reset for your mind and body.
+                                **COMING TO THE SCHEDULE SOON**
                             </Typography>
                         </div>
                     </div>
@@ -127,14 +136,15 @@ export default function Classes() {
                                 </Typography>
                             </div>
                             <Typography style={{fontFamily: theme.typography.fontFamily}}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis cursus tellus. Pellentesque semper ex a dictum molestie. 
-                                Integer at tortor viverra, rutrum nulla nec, dictum ipsum. Donec dapibus ultrices metus, sed scelerisque purus feugiat non. 
-                                Sed a turpis ut odio dignissim sodales. Nullam at lobortis augue, ut viverra est. Integer risus lorem, feugiat quis ultrices in, 
-                                consequat quis mauris. Etiam elit mi, placerat id sodales ut, lacinia eget diam. Ut faucibus ut tellus consequat blandit.
+                                Restore your body after the weekend with a minor piece of workout and flexibility. 
+                                Work on what your body is calling to you. **COMING TO THE SCHEDULE SOON**
                             </Typography>
                         </div>
-
-                        <img src={classes2} alt="Class 2"/>
+                        <LazyLoad height={200} once>
+                            <animated.div style={fade}>
+                                <img src={classes4} alt="Class 2"/>
+                            </animated.div>
+                        </LazyLoad>
 
                     </div>
                 </div>

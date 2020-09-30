@@ -3,6 +3,8 @@ import aboutPic from '../Assets/rsz_about.jpg'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import theme from '../theme'
+import LazyLoad from 'react-lazyload'
+import { useSpring, animated } from 'react-spring'
 
 
 const useStyles = makeStyles({
@@ -41,6 +43,10 @@ const useStyles = makeStyles({
 
 export default function About() {
     const classes = useStyles();
+    const fade = useSpring({
+        opacity: 1,
+        from: {opacity: 0},
+    });
     return (
         <div className={classes.root}>
             <div className={classes.banner}>
@@ -52,15 +58,24 @@ export default function About() {
                 <div className={classes.container}>
                     <div className={classes.content}>
                         <div>
-                            <img src={aboutPic} alt="Kari smiling"/>
+                            <LazyLoad height={200}>
+                                <animated.div style={fade} once>
+                                    <img src={aboutPic} alt="Kari smiling"/>
+                                </animated.div>
+                            </LazyLoad>
                         </div>
                         <div className={classes.description}>
-                            <Typography variant="h5" style={{fontFamily: theme.typography.fontFamily, paddingBottom: 10}}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis cursus tellus. Pellentesque semper ex a dictum molestie. 
+                            <Typography variant="h5" style={{fontFamily: theme.typography.fontFamily, paddingBottom: 30}}>
+                                Lets get it OM! 
+                            </Typography>
+                            <Typography style={{paddingBottom: 20}}>
+                                Virtual yoga takes place in the surroundings you choose. With life swirling around, at a seemingly dizzying pace, 
+                                it can be challenging to find a peaceful escape to focus on and prioritize yourself. 
                             </Typography>
                             <Typography>
-                                Sed a turpis ut odio dignissim sodales. Nullam at lobortis augue, ut viverra est. Integer risus lorem, feugiat quis ultrices in, 
-                                consequat quis mauris. Etiam elit mi, placerat id sodales ut, lacinia eget diam. Ut faucibus ut tellus consequat blandit.
+                                At Ebb&Lowe, we want that first step onto your mat to be the beginning of a personal journey that removes you from the rigors of day-to-day life and serves as the 
+                                foundation for calmness. The 6 foot by 2 foot space we all share should encourage you to comfortably push yourself, to be present and to move your mind, body and 
+                                soul together one breath to one movement. 
                             </Typography>
                         </div>
                     </div>
