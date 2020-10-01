@@ -5,9 +5,14 @@ import classes1 from '../Assets/rsz_classes1.jpg'
 import classes2 from '../Assets/rsz_classes2.jpg'
 import classes3 from '../Assets/rsz_classes3.jpg'
 import classes4 from '../Assets/rsz_classes4.jpg'
+import mobileClass1 from '../Assets/mobile_class1.jpg'
+import mobileClass2 from '../Assets/mobile_class2.jpg'
+import mobileClass3 from '../Assets/mobile_class3.jpg'
+import mobileClass4 from '../Assets/mobile_class4.jpg'
 import theme from '../theme'
 import LazyLoad from 'react-lazyload'
 import { useSpring, animated } from 'react-spring'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 const useStyles = makeStyles({
     root: {
@@ -35,13 +40,21 @@ const useStyles = makeStyles({
     },
     content: {
         display: "flex",
+        flexWrap: "wrap",
         paddingBottom: "15%"
     },
     description: {
+        maxWidth: "45%",
+        marginTop: "6%",
+        marginLeft: "7%"
+    },
+    mobileDescription: {
+        maxWidth: "90%",
         marginTop: "6%",
         marginLeft: "7%"
     },
     flippedDescription: {
+        maxWidth: "45%",
         marginTop: "6%",
         marginRight: "7%"
     },
@@ -62,7 +75,7 @@ export default function Classes() {
         opacity: 1,
         from: {opacity: 0},
     });
-
+    const matches = useMediaQuery('(max-width:600px)');
     return (
         <div className={classes.root}>
             <div className={classes.banner}>
@@ -75,10 +88,10 @@ export default function Classes() {
                     <div className={classes.content}>
                         <LazyLoad height={200} once>
                             <animated.div style={fade}>
-                                <img src={classes1} alt="Class 1"/>
+                                <img src={matches ? mobileClass1 : classes1} alt="Class 1"/>
                             </animated.div>
                         </LazyLoad>
-                        <div className={classes.description}>
+                        <div className={matches ? classes.mobileDescription : classes.description}>
                             <div className={classes.name}>
                                 <Typography variant="h2" style={{color: theme.palette.primary.light, fontFamily: theme.typography.fontFamily}}>
                                     Vinyas Flow
@@ -92,7 +105,7 @@ export default function Classes() {
                         </div>
                     </div>
                     <div className={classes.content}>
-                        <div className={classes.flippedDescription}>
+                        <div className={matches ? classes.mobileDescription : classes.flippedDescription}>
                             <div className={classes.name}>
                                 <Typography variant="h2" style={{color: theme.palette.primary.light, fontFamily: theme.typography.fontFamily}}>
                                     Don't Plan(k) On It Flow
@@ -106,17 +119,17 @@ export default function Classes() {
                         </div>
                         <LazyLoad height={200} once>
                             <animated.div style={fade}>
-                                <img src={classes2} alt="Class 2"/>
+                                <img src={matches ? mobileClass2 : classes2} alt="Class 2"/>
                             </animated.div>
                         </LazyLoad>
                     </div>
                     <div className={classes.content}>
                         <LazyLoad height={200} once>
                             <animated.div style={fade}>
-                                <img src={classes3} alt="Class 3"/>
+                                <img src={matches ? mobileClass3 : classes3} alt="Class 3"/>
                             </animated.div>
                         </LazyLoad>
-                        <div className={classes.description}>
+                        <div className={matches ? classes.mobileDescription : classes.description}>
                             <div className={classes.name}>
                                 <Typography variant="h2" style={{color: theme.palette.primary.light, fontFamily: theme.typography.fontFamily}}>
                                     Quick Flow
@@ -129,7 +142,7 @@ export default function Classes() {
                         </div>
                     </div>
                     <div className={classes.content}>
-                        <div className={classes.flippedDescription}>
+                        <div className={matches ? classes.mobileDescription : classes.flippedDescription}>
                             <div className={classes.name}>
                                 <Typography variant="h2" style={{color: theme.palette.primary.light, fontFamily: theme.typography.fontFamily}}>
                                     Soothing Souls Flow
@@ -142,7 +155,7 @@ export default function Classes() {
                         </div>
                         <LazyLoad height={200} once>
                             <animated.div style={fade}>
-                                <img src={classes4} alt="Class 2"/>
+                                <img src={matches ? mobileClass4 : classes4} alt="Class 2"/>
                             </animated.div>
                         </LazyLoad>
 

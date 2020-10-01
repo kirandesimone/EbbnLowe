@@ -1,10 +1,12 @@
 import React from 'react'
 import aboutPic from '../Assets/rsz_about.jpg'
+import mobileAbout from '../Assets/mobile_about.jpg'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import theme from '../theme'
 import LazyLoad from 'react-lazyload'
 import { useSpring, animated } from 'react-spring'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 
 const useStyles = makeStyles({
@@ -33,6 +35,7 @@ const useStyles = makeStyles({
     },
     content: {
         display: "flex",
+        flexWrap: "wrap",
         paddingBottom: "15%"
     },
     heading: {
@@ -41,9 +44,15 @@ const useStyles = makeStyles({
         paddingBottom: 30
     },
     description: {
+        maxWidth: "40%",
         marginTop: "9%",
         marginLeft : "7%"
     },
+    mobileDescription: {
+        maxWidth: "90%",
+        marginTop: "9%",
+        marginLeft : "7%"
+    }
 })
 
 export default function About() {
@@ -52,6 +61,7 @@ export default function About() {
         opacity: 1,
         from: {opacity: 0},
     });
+    const matches = useMediaQuery('(max-width:600px)');
     return (
         <div className={classes.root}>
             <div className={classes.banner}>
@@ -65,11 +75,11 @@ export default function About() {
                         <div>
                             <LazyLoad height={200} once>
                                 <animated.div style={fade}>
-                                    <img src={aboutPic} alt="Kari smiling"/>
+                                    <img src={matches ? mobileAbout : aboutPic} alt="Kari smiling"/>
                                 </animated.div>
                             </LazyLoad>
                         </div>
-                        <div className={classes.description}>
+                        <div className={matches ? classes.mobileDescription: classes.description}>
                             <Typography variant="h5" className={classes.heading}>
                                 Lets get it OM! 
                             </Typography>

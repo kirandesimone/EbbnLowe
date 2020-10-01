@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import theme from '../theme'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
+import { Button } from '@material-ui/core'
 
 const useStyles = makeStyles({
     root: {
@@ -30,10 +32,14 @@ const useStyles = makeStyles({
     content: {
         display: "flex",
     },
+    button: {
+        backgroundColor: theme.palette.secondary.main
+    },
 })
 
 export default function BookAClass() {
     const classes = useStyles();
+    const matches = useMediaQuery('(max-width:600px)');
     return (
         <div className={classes.root}>
             <div className={classes.banner}>
@@ -42,16 +48,33 @@ export default function BookAClass() {
                 </Typography>
             </div>
             <div className={classes.container}>
-                <iframe 
-                src="https://app.acuityscheduling.com/schedule.php?owner=20766070" 
-                title="Schedule Appointment" 
-                width="100%" 
-                height="800" 
-                frameBorder="0"
-                >
-                </iframe>
-                <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript"></script>
-                
+                {matches ? (
+                    <Fragment className={classes.mobileBook}>
+                        <Button className={classes.button} variant="contained" size="large">
+                            <a 
+                            href='https://app.acuityscheduling.com/schedule.php?owner=20766070' 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            style={{color: theme.palette.primary.main}} 
+                            >
+                                Book now
+                            </a>
+                        </Button>
+                    </Fragment>
+                 ) : ( 
+                    <Fragment>
+                        <iframe 
+                        src="https://app.acuityscheduling.com/schedule.php?owner=20766070" 
+                        title="Schedule Appointment" 
+                        width="100%" 
+                        height="800" 
+                        frameBorder="0"
+                        >
+                        </iframe>
+                        <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript"></script>
+                    </Fragment>
+                 )
+                }
             </div>
         </div>
     )

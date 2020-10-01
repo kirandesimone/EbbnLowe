@@ -32,6 +32,14 @@ const useStyles = makeStyles({
         paddingTop: "27%",
         paddingLeft: "15%",
     },
+    mobileHeroText: {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        maxWidth: "70%",
+        paddingTop: "27%",
+        paddingLeft: "15%",
+    },
     heroTextStyle: {
         color: theme.palette.primary.main, 
         fontFamily: theme.typography.fontFamily,
@@ -77,6 +85,15 @@ const useStyles = makeStyles({
         maxWidth: 1440,
         paddingTop: "3%"
     },
+    aboutWords: {
+        fontFamily: theme.typography.fontFamily, 
+        color: theme.palette.primary.dark
+    },
+    mobileAboutWords: {
+        fontFamily: theme.typography.fontFamily, 
+        color: theme.palette.primary.dark,
+        fontSize: "2.5rem"
+    },
     sectionHeader: {
         fontFamily: theme.typography.fontFamily,
         color: theme.palette.primary.main,
@@ -93,7 +110,7 @@ export default function Home() {
     return (
        <div>
             <animated.div style={fade} className={classes.heroImage}>
-                <div className={classes.heroText}>
+                <div className={matches ? classes.mobileHeroText : classes.heroText}>
                     <Typography variant="h3" className={classes.heroTextStyle}>
                         Taking care of your mind, body and soul.
                     </Typography>
@@ -131,7 +148,7 @@ export default function Home() {
             <section>
                 <div className={classes.about}>
                     <div className={classes.aboutContent}>
-                        <Typography variant="h3" style={{fontFamily: theme.typography.fontFamily, color: theme.palette.primary.dark}}>
+                        <Typography variant="h3" className={matches ? classes.mobileAboutWords : classes.aboutWords}>
                             Virtual yoga takes place in the surroundings you choose. With life swirling around, at a seemingly dizzying pace, 
                             it can be challenging to find a peaceful escape to focus on and prioritize yourself.
                         </Typography>

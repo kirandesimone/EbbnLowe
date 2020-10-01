@@ -4,7 +4,9 @@ import LazyLoad from 'react-lazyload'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import instructorPic from '../Assets/rsz_instructor.jpg'
+import mobileInstructor from '../Assets/mobile_instructor.jpg'
 import theme from '../theme'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 
 const useStyles = makeStyles({
@@ -33,8 +35,15 @@ const useStyles = makeStyles({
     },
     content: {
         display: "flex",
+        flexWrap: "wrap"
     },
     description: {
+        maxWidth: "40%",
+        marginTop: "9%",
+        marginLeft: "7%"
+    },
+    mobileDescription: {
+        maxWidth: "90%",
         marginTop: "9%",
         marginLeft: "7%"
     },
@@ -53,6 +62,7 @@ export default function Instructors() {
         opacity: 1,
         from: {opacity: 0},
     });
+    const matches = useMediaQuery('(max-width:600px)');
     return (
         <div className={classes.root}>
             <div className={classes.banner}>
@@ -65,10 +75,10 @@ export default function Instructors() {
                 <div className={classes.content}>
                     <LazyLoad height={200}>
                         <animated.div style={fade}>
-                            <img src={instructorPic} alt="Kari the instructor" />
+                            <img src={matches ? mobileInstructor : instructorPic} alt="Kari the instructor" />
                         </animated.div>
                     </LazyLoad>
-                    <div className={classes.description}>
+                    <div className={matches ? classes.mobileDescription : classes.description} >
                         <div className={classes.name}>
                             <Typography variant="h2" style={{color: theme.palette.primary.light, fontFamily: theme.typography.fontFamily}}>
                                 Kari Lowe
