@@ -49,7 +49,7 @@ export default function BookAClass() {
             </div>
             <div className={classes.container}>
                 {matches ? (
-                    <Fragment className={classes.mobileBook}>
+                    <div className={classes.mobileBook}>
                         <Button className={classes.button} variant="contained" size="large">
                             <a 
                             href='https://app.acuityscheduling.com/schedule.php?owner=20766070' 
@@ -60,7 +60,7 @@ export default function BookAClass() {
                                 Book now
                             </a>
                         </Button>
-                    </Fragment>
+                    </div>
                  ) : ( 
                     <Fragment>
                         <iframe 
