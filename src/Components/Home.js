@@ -6,6 +6,7 @@ import background from '../Assets/background.jpg'
 import homePic1 from '../Assets/rsz_home1.jpg'
 import homePic2 from '../Assets/rsz_home2.jpg'
 import mobile1 from '../Assets/mobile_home1.jpg'
+import mobile2 from '../Assets/mobile_home2.jpg'
 import { makeStyles } from '@material-ui/core/styles'
 import theme from '../theme'
 import { Typography } from '@material-ui/core'
@@ -115,7 +116,7 @@ export default function Home() {
                     </div>
                     <div>
                         <LazyLoad height={200} offset={100}>
-                            <img src={homePic2} alt="Teacher Kari doing a pose"/>
+                            <img src={matches ? mobile2 : homePic2} alt="Teacher Kari doing a pose"/>
                         </LazyLoad>
                     </div>
                 </div>
