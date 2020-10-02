@@ -94,7 +94,7 @@ export default function Classes() {
                         <div className={matches ? classes.mobileDescription : classes.description}>
                             <div className={classes.name}>
                                 <Typography variant="h2" style={{color: theme.palette.primary.light, fontFamily: theme.typography.fontFamily}}>
-                                    Vinyas Flow
+                                    VinYAS Flow
                                 </Typography>
                             </div>
                             <Typography>
@@ -112,7 +112,7 @@ export default function Classes() {
                                 </Typography>
                             </div>
                             <Typography>
-                                Work your core and arm strength up in a full body strength and inversion based class. 
+                                Build up your core and arm strength up in a full body strength and inversion based class. 
                                 If you are dying to get upside down, this class welcomes all levels of yogis looking to challenge themselves and work up to an inversion or practice the skills to get there. 
                                 (Video participation is STRONGLY recommended) 
                             </Typography>
