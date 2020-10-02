@@ -27,7 +27,7 @@ export default function Footer() {
         <footer className={classes.root}>
             <div className={classes.socialMedia}>
                 <a 
-                href="https://www.instagram.com/kari.lowe_tus/?hl=en" 
+                href="https://www.instagram.com/ebbnlowe/?hl=en" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 style={{color:"inherit"}}
