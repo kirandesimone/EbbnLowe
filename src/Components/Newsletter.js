@@ -6,7 +6,7 @@ import theme from '../theme'
 
 const useStyles = makeStyles({
     button: {
-      backgroundColor: theme.palette.primary.main
+      backgroundColor: theme.palette.primary.main,
     }
     
 })

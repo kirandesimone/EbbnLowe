@@ -173,7 +173,7 @@ export default function Home() {
                                 Stay up to date by subscribing to our newsletter!
                             </Typography>
                         </div>
-                        <div style={{paddingLeft: '20%'}}>
+                        <div style={{paddingLeft: '30%'}}>
                             <Newsletter/>
                         </div>
                     </div>
