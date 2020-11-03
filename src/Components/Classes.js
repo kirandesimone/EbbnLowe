@@ -5,10 +5,12 @@ import classes1 from '../Assets/rsz_classes1.jpg'
 import classes2 from '../Assets/rsz_classes2.jpg'
 import classes3 from '../Assets/rsz_classes3.jpg'
 import classes4 from '../Assets/rsz_classes4.jpg'
+import classes5 from '../Assets/rsz_classes5.jpg'
 import mobileClass1 from '../Assets/mobile_class1.jpg'
 import mobileClass2 from '../Assets/mobile_class2.jpg'
 import mobileClass3 from '../Assets/mobile_class3.jpg'
 import mobileClass4 from '../Assets/mobile_class4.jpg'
+import mobileClass5 from '../Assets/mobile_class5.jpg'
 import theme from '../theme'
 import LazyLoad from 'react-lazyload'
 import { useSpring, animated } from 'react-spring'
@@ -137,7 +139,6 @@ export default function Classes() {
                             </div>
                             <Typography>
                                 A 30 min class that can be taken during a morning or afternoon routine that allows for a quick reset for your mind and body.
-                                **COMING TO THE SCHEDULE SOON**
                             </Typography>
                         </div>
                     </div>
@@ -155,10 +156,29 @@ export default function Classes() {
                         </div>
                         <LazyLoad height={200} once>
                             <animated.div style={fade}>
-                                <img src={matches ? mobileClass4 : classes4} alt="Class 2"/>
+                                <img src={matches ? mobileClass4 : classes4} alt="Class 4"/>
                             </animated.div>
                         </LazyLoad>
 
+                    </div>
+                    <div className={classes.content}>
+                        <LazyLoad height={200} once>
+                            <animated.div style={fade}>
+                                <img src={matches ? mobileClass5 : classes5} alt="Class 5"/>
+                            </animated.div>
+                        </LazyLoad>
+                        <div className={matches ? classes.mobileDescription : classes.description}>
+                            <div className={classes.name}>
+                                <Typography variant="h2" style={{color: theme.palette.primary.light, fontFamily: theme.typography.fontFamily}}>
+                                    Chair(ity) Flow
+                                </Typography>
+                            </div>
+                            <Typography>
+                                A donation-based charity class - pay what you can and the proceeds will be donated to an organization announced the week of class.
+                                This class is a powerful and energetic flow designed to build strength and help you grow inside and out. With lots of flowing breath 
+                                to movement and options for inversion or arm balance play time, you will leave class feeling challenged and mindful, all for a good cause.
+                            </Typography>
+                        </div>
                     </div>
                 </div>
             </div>

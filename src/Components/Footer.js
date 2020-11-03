@@ -20,9 +20,13 @@ const useStyles = makeStyles({
     logo: {
         display: "flex",
         justifyContent: "center",
-        paddingLeft: "30%"
+        paddingLeft: "32%"
+    },
+    mobileLogo: {
+        display: "flex",
+        justifyContent: "center",
+        paddingLeft: "25%"
     }
-    
 })
 
 export default function Footer() {
@@ -61,7 +65,7 @@ export default function Footer() {
                     <FaRegCopyright/>Ebb&Lowe
                 </div>
             </div>
-            <div className={classes.logo}>
+            <div className={matches ? classes.mobileLogo : classes.logo}>
                 <img src={matches ? mobileLogo : logo} alt="ebbnlowe logo"/>
             </div>
         </footer>

@@ -12,6 +12,7 @@ const useStyles = makeStyles({
     },
     container: {
         display: "flex",
+        flexWrap: "wrap",
         justifyContent: "space-between",
         marginTop: 150,
         paddingRight: "20%",
@@ -29,6 +30,13 @@ const useStyles = makeStyles({
         color: theme.palette.primary.main,
         fontFamily: theme.typography.fontFamily
     },
+    mobileTitle: {
+        paddingTop: 250,
+        paddingBottom: 100,
+        paddingLeft: "5%",
+        color: theme.palette.primary.main,
+        fontFamily: theme.typography.fontFamily
+    },
     content: {
         display: "flex",
     },
@@ -43,7 +51,7 @@ export default function BookAClass() {
     return (
         <div className={classes.root}>
             <div className={classes.banner}>
-                <Typography variant="h2" className={classes.title}>
+                <Typography variant="h2" className={ matches ? classes.mobileTitle : classes.title}>
                     Book a Class
                 </Typography>
             </div>
