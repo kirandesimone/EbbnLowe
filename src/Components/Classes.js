@@ -150,8 +150,8 @@ export default function Classes() {
                                 </Typography>
                             </div>
                             <Typography>
-                                Restore your body after the weekend with a minor piece of workout and flexibility. 
-                                Work on what your body is calling to you. **COMING TO THE SCHEDULE SOON**
+                                Restore your body with a minor piece of workout and flexibility. 
+                                Work on what your body is calling to you.
                             </Typography>
                         </div>
                         <LazyLoad height={200} once>
